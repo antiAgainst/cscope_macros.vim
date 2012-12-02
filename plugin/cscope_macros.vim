@@ -59,7 +59,7 @@ if has("cscope")
     " '-' implies previous results clearance, '0' or command absence - don't use
     " quickfix.  Search is performed from start until first command occurrence.
     " The default value is "" (don't use quickfix anyway).
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    "set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 
     """"""""""""" My cscope/vim key mappings
