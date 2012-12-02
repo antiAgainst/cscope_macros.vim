@@ -52,6 +52,15 @@ if has("cscope")
     " show msg when any other cscope db added
     set cscopeverbose
 
+    " 'cscopequickfix' specifies whether to use quickfix window to show cscope
+    " results.  This is a list of comma-separated values. Each item consists of
+    " |cscope-find| command (s, g, d, c, t, e, f or i) and flag (+, - or 0).
+    " '+' indicates that results must be appended to quickfix window,
+    " '-' implies previous results clearance, '0' or command absence - don't use
+    " quickfix.  Search is performed from start until first command occurrence.
+    " The default value is "" (don't use quickfix anyway).
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+
 
     """"""""""""" My cscope/vim key mappings
     "
