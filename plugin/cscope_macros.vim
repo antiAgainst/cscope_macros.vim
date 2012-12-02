@@ -30,11 +30,15 @@ if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
 
-    " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+    " If 'cscopetag' set, the commands ":tag" and CTRL-] as well as "vim -t" will
+    " always use :cstag instead of the default :tag behavior.  Effectively, by
+    " setting 'cst', you will always search your cscope databases as well as your
+    " tag files.
     set cscopetag
 
-    " check cscope for definition of a symbol before checking ctags: set to 1
-    " if you want the reverse search order.
+    " If 'csto' is set to zero, cscope database(s) are searched first, followed
+    " by tag file(s) if cscope did not return any matches.  If 'csto' is set to
+    " one, tag file(s) are searched before cscope database(s).
     set csto=0
 
     " add any cscope database in current directory
@@ -43,10 +47,10 @@ if has("cscope")
     " else add the database pointed to by environment variable 
     elseif $CSCOPE_DB != ""
         cs add $CSCOPE_DB
-	endif
+    endif
 
     " show msg when any other cscope db added
-	set cscopeverbose  
+    set cscopeverbose
 
 
     """"""""""""" My cscope/vim key mappings
